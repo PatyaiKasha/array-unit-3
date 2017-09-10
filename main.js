@@ -52,9 +52,13 @@ function masOut3() {
             out += i + ') ' + newMas1[i] + '<br>';
             document.getElementById('out2').innerHTML = out + '<hr>';
         }
-    } else if (newMas1.length == 1) {
+    } else {
         document.getElementById('out2').remove();
         console.log(document.getElementById('out2'));
+        if (document.getElementById('out2') == null) {
+            location.reload();
+            // alert('Больше нечего удалять !');
+        }
     }
 }
 
@@ -75,11 +79,33 @@ function masOut4() {
             out += i + ') ' + newMas1[i] + '<br>';
             document.getElementById('out2').innerHTML = out + '<hr>';
         }
-    } else if (newMas1.length == 1) {
+    } else {
         document.getElementById('out2').remove();
         console.log(document.getElementById('out2'));
+        if (document.getElementById('out2') == null) {
+            location.reload();
+            // alert('Больше нечего удалять !');
+        }
     }
 }
+
+// function masOut4() {
+//     if (newMas1.length > 1) {
+//         newMas1.shift();
+//         console.log(newMas1);
+//         var out = '';
+//         for (var i = 0; i < newMas1.length; i++) {
+//             out += i + ') ' + newMas1[i] + '<br>';
+//             document.getElementById('out2').innerHTML = out + '<hr>';
+//         }
+//     } else if (newMas1.length == 1) {
+//         document.getElementById('out2').remove();
+//         console.log(document.getElementById('out2'));
+//     }
+// }
+
+
+
 
 // 5. Добавьте кнопку push реализующую метод push()
 // для введенного выше массива. Данные для записи
