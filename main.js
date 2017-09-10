@@ -4,6 +4,7 @@
 var newMas1 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 function masOut1() {
+
     var out = '';
     for (var i = 0; i < newMas1.length; i++) {
         out += i + 1 + ') ' + newMas1[i] + '<br>';
@@ -24,8 +25,8 @@ function masOut2() {
     var in21 = document.getElementById('inOne').value; // mass index
     var in22 = document.getElementById('inTwo').value; // mass value
     newMas1[in21] = in22;
-    var out = '';
 
+    var out = '';
     if (in21 != '' && in22 != '') {
         for (var i = 0; i < newMas1.length; i++) {
             out += i + ') ' + newMas1[i] + '<br>';
@@ -39,17 +40,25 @@ function masOut2() {
 // для введенного выше массива.
 // Метод pop() - удаляет с конца массива
 
+
 var btn3 = document.getElementById('btn3').onclick = masOut3;
 
 function masOut3() {
-    newMas1.pop();
-    console.log(newMas1);
-    var out = '';
-    for (var i = 0; i < newMas1.length; i++) {
-        out += i + ') ' + newMas1[i] + '<br>';
-        document.getElementById('out2').innerHTML = out + '<hr>';
+    if (newMas1.length > 1) {
+        newMas1.pop();
+        console.log(newMas1);
+        var out = '';
+        for (var i = 0; i < newMas1.length; i++) {
+            out += i + ') ' + newMas1[i] + '<br>';
+            document.getElementById('out2').innerHTML = out + '<hr>';
+        }
+    } else if (newMas1.length == 1) {
+        document.getElementById('out2').remove();
+        console.log(document.getElementById('out2'));
     }
 }
+
+
 
 // 4. Добавьте кнопку shift реализующую метод shift()
 // для введенного выше массива.
@@ -58,12 +67,17 @@ function masOut3() {
 var btn4 = document.getElementById('btn4').onclick = masOut4;
 
 function masOut4() {
-    newMas1.shift();
-    console.log(newMas1);
-    var out = '';
-    for (var i = 0; i < newMas1.length; i++) {
-        out += i + ') ' + newMas1[i] + '<br>';
-        document.getElementById('out2').innerHTML = out + '<hr>';
+    if (newMas1.length > 1) {
+        newMas1.shift();
+        console.log(newMas1);
+        var out = '';
+        for (var i = 0; i < newMas1.length; i++) {
+            out += i + ') ' + newMas1[i] + '<br>';
+            document.getElementById('out2').innerHTML = out + '<hr>';
+        }
+    } else if (newMas1.length == 1) {
+        document.getElementById('out2').remove();
+        console.log(document.getElementById('out2'));
     }
 }
 
